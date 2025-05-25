@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Location Scraper</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Dexie.js for IndexedDB management -->
+    <script src="https://unpkg.com/dexie@3.2.3/dist/dexie.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Instagram Location Scraper</h1>
+        
+        <div class="input-section">
+            <input type="text" id="locationUrl" placeholder="Instagram location URL" value="https://www.instagram.com/explore/locations/113299477167515/tatte-bakery-cafe/">
+            <button id="startScraping">Start Scraping</button>
+        </div>
+        
+        <div class="status-section">
+            <p id="status">Ready</p>
+            <progress id="progressBar" value="0" max="100" style="display: none;"></progress>
+        </div>
+        
+        <div class="results-section">
+            <h2>Collected Usernames (<span id="userCount">0</span>)</h2>
+            <button id="exportData">Export Data</button>
+            <button id="clearData">Clear Database</button>
+            <div id="userList" class="user-list"></div>
+        </div>
+    </div>
+    
+    <script src="database.js"></script>
+    <script src="scraper.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 
